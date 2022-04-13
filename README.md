@@ -151,34 +151,34 @@ Update the hosts file in /etc/ansible to include webservers group
 	- host: "<ELK VM PRIVATE IP>:5601"
 	
 	- output.elasticsearch:
-	Array of hosts to connect to.
-	hosts: ["<ELK VM PRIVATE IP>:9200"]
-	username: "elastic"
-	password: "changeme"
+	- Array of hosts to connect to.
+	- hosts: ["<ELK VM PRIVATE IP>:9200"]
+	- username: "elastic"
+	- password: "changeme"
 
 	- Optional protocol and basic auth credentials.
-	protocol: "https"
-	username: "elastic"
-	password: "changeme"
+	- protocol: "https"
+	- username: "elastic"
+	- password: "changeme"
 	
 - update the metricbeat-config file to include...
 
 - Under Kibana
 	- setup.kibana:
-	host: "10.0.0.4:5601"
+	- host: "10.0.0.4:5601"
 
 - Under Elasticsearch Output
 
 	- output.elasticsearch:
-	Array of hosts to connect to.
-	hosts: ["10.0.0.4:9200"]
-	username: "elastic"
-	password: "changeme"
+	- Array of hosts to connect to.
+	- hosts: ["10.0.0.4:9200"]
+	- username: "elastic"
+	- password: "changeme"
 
-	Optional protocol and basic auth credentials.
-	#protocol: "https"
-	#username: "elastic"
-	#password: "changeme"
+	- Optional protocol and basic auth credentials.
+	- #protocol: "https"
+	- #username: "elastic"
+	- #password: "changeme"
 
 - Run the desired playbook(s), and navigate to http://{ElkVM Public IP}:5601/app/kibana#/home to check that the installation worked as expected. Wait till you have verified Kibana is running before you update the login credentials, then update the config file.
 
