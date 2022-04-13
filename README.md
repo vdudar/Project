@@ -138,6 +138,7 @@ Update the hosts file in /etc/ansible to include webservers group
 	[elk]
 	10.0.0.4 ansible_python_interpreter=/usr/bin/python3
 	```
+	
 - if neccesary, update the remote_login line in ansible.cfg
 - 	remote_user = sysadmin
 
@@ -154,14 +155,14 @@ Update the hosts file in /etc/ansible to include webservers group
 
 	
 - output.elasticsearch:
-	# Array of hosts to connect to.
+	Array of hosts to connect to.
 	hosts: ["<ELK VM PRIVATE IP>:9200"]
 	username: "elastic"
 	password: "changeme"
-	# Optional protocol and basic auth credentials.
-	#protocol: "https"
-	#username: "elastic"
-	#password: "changeme"
+	Optional protocol and basic auth credentials.
+	protocol: "https"
+	username: "elastic"
+	password: "changeme"
 	
 - update the metricbeat-config file to include...
 
@@ -171,15 +172,15 @@ Update the hosts file in /etc/ansible to include webservers group
 
 - Under Elasticsearch Output
 	output.elasticsearch:
-	# Array of hosts to connect to.
+	Array of hosts to connect to.
 	hosts: ["10.0.0.4:9200"]
 	username: "elastic"
 	password: "changeme"
 	
-	# Optional protocol and basic auth credentials.
-	#protocol: "https"
-	#username: "elastic"
-	#password: "changeme"
+	Optional protocol and basic auth credentials.
+	protocol: "https"
+	username: "elastic"
+	password: "changeme"
 	
 - Run the desired playbook(s), and navigate to http://{ElkVM Public IP}:5601/app/kibana#/home to check that the installation worked as expected. Wait till you have verified Kibana is running before you update the login credentials, then update the config file.
 
