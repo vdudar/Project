@@ -151,15 +151,15 @@ Update the hosts file in /etc/ansible to include webservers group
 	- host: "<ELK VM PRIVATE IP>:5601"
 	
 	- output.elasticsearch:
-	# Array of hosts to connect to.
+	Array of hosts to connect to.
 	hosts: ["<ELK VM PRIVATE IP>:9200"]
 	username: "elastic"
 	password: "changeme"
 
-	- # Optional protocol and basic auth credentials.
-	#protocol: "https"
-	#username: "elastic"
-	#password: "changeme"
+	- Optional protocol and basic auth credentials.
+	protocol: "https"
+	username: "elastic"
+	password: "changeme"
 	
 - update the metricbeat-config file to include...
 
@@ -170,12 +170,12 @@ Update the hosts file in /etc/ansible to include webservers group
 - Under Elasticsearch Output
 
 	- output.elasticsearch:
-	# Array of hosts to connect to.
+	Array of hosts to connect to.
 	hosts: ["10.0.0.4:9200"]
 	username: "elastic"
 	password: "changeme"
 
-	- # Optional protocol and basic auth credentials.
+	Optional protocol and basic auth credentials.
 	#protocol: "https"
 	#username: "elastic"
 	#password: "changeme"
