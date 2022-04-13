@@ -131,14 +131,14 @@ Once you are SSH into ansible's docker container you can follow the steps below:
 - Update the hosts file in /etc/ansible to include webservers group
 
 ```
-/etc/ansible/hosts
-[webservers]
-10.0.0.5 ansible_python_interpreter=/usr/bin/python3
-10.0.0.6 ansible_python_interpreter=/usr/bin/python3
-10.0.0.7 ansible_python_interpreter=/usr/bin/python3
+	# /etc/ansible/hosts
+	[webservers]
+	10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+	10.0.0.6 ansible_python_interpreter=/usr/bin/python3
+	10.0.0.7 ansible_python_interpreter=/usr/bin/python3
 
-[elk]
-10.0.0.4 ansible_python_interpreter=/usr/bin/python3
+	[elk]
+	10.0.0.4 ansible_python_interpreter=/usr/bin/python3
 ```
 
 - if neccesary, update the remote_login line in ansible.cfg
@@ -155,7 +155,8 @@ Once you are SSH into ansible's docker container you can follow the steps below:
 - setup.kibana:
 	- host: "<ELK VM PRIVATE IP>:5601"
 	
-- 	# output.elasticsearch:
+```
+	# output.elasticsearch:
 	Array of hosts to connect to.
 	hosts: ["<ELK VM PRIVATE IP>:9200"]
 	username: "elastic"
@@ -165,6 +166,7 @@ Once you are SSH into ansible's docker container you can follow the steps below:
 	# protocol: "https"
 	# username: "elastic"
 	# password: "changeme"
+```
 	
 - update the metricbeat-config file to include...
 
