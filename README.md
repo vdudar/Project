@@ -153,7 +153,9 @@ Once you are SSH into ansible's docker container you can follow the steps below:
 - Update the filebeat-config file to include...
 
 - setup.kibana:
-```	host: "<ELK VM PRIVATE IP>:5601" ```
+```
+host: "<ELK VM PRIVATE IP>:5601" 
+```
 
 ```
 	output.elasticsearch:
