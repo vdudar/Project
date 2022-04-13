@@ -115,13 +115,13 @@ Filebeat: When you start this beat, it starts one or more inputs that look in th
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
 - ssh to the jumpbox from your public IP
-- 
+
 - start docker
-- 	sudo docker start <docker_name>
-- 	
+	- sudo docker start <docker_name>
+ 	
 - attach docker
-- 	sudo docker attach <docker_name>
-- 	
+	- sudo docker attach <docker_name>
+ 	
 Once you are SSH into ansible's docker container you can follow the steps below:
 
 - !Important: for elk to run, your VM will have to have at least 4GB memory, and 3.5 GB available
@@ -130,7 +130,7 @@ Once you are SSH into ansible's docker container you can follow the steps below:
 
 - Update the hosts file in /etc/ansible to include webservers group
 
-- 	# /etc/ansible/hosts
+	# /etc/ansible/hosts
 	[webservers]
 	10.1.0.5 ansible_python_interpreter=/usr/bin/python3
 	10.1.0.6 ansible_python_interpreter=/usr/bin/python3
@@ -153,16 +153,16 @@ Once you are SSH into ansible's docker container you can follow the steps below:
 - setup.kibana:
 	- host: "<ELK VM PRIVATE IP>:5601"
 	
-	- output.elasticsearch:
-	- Array of hosts to connect to.
-	- hosts: ["<ELK VM PRIVATE IP>:9200"]
-	- username: "elastic"
-	- password: "changeme"
+- 	# output.elasticsearch:
+	Array of hosts to connect to.
+	hosts: ["<ELK VM PRIVATE IP>:9200"]
+	username: "elastic"
+	password: "changeme"
 
-	- Optional protocol and basic auth credentials.
-	- protocol: "https"
-	- username: "elastic"
-	- password: "changeme"
+	# Optional protocol and basic auth credentials.
+	# protocol: "https"
+	# username: "elastic"
+	# password: "changeme"
 	
 - update the metricbeat-config file to include...
 
