@@ -114,22 +114,23 @@ Filebeat: When you start this beat, it starts one or more inputs that look in th
 ### Using the Playbook
 In order to use the playbook, you will need to have an Ansible control node already configured. Assuming you have such a control node provisioned: 
 
-ssh to the jumpbox from your public IP
-start docker
-sudo docker start <docker_name>
-
-attach docker
-sudo docker attach <docker_name>
-
+- ssh to the jumpbox from your public IP
+- 
+- start docker
+- 	sudo docker start <docker_name>
+- 	
+- attach docker
+- 	sudo docker attach <docker_name>
+- 	
 Once you are SSH into ansible's docker container you can follow the steps below:
 
-!Important: for elk to run, your VM will have to have at least 4GB memory, and 3.5 GB available
+- !Important: for elk to run, your VM will have to have at least 4GB memory, and 3.5 GB available
 
-Copy the playbooks, and config files to /etc/ansible.
+- Copy the playbooks, and config files to /etc/ansible.
 
-Update the hosts file in /etc/ansible to include webservers group
+- Update the hosts file in /etc/ansible to include webservers group
 
-	# /etc/ansible/hosts
+- 	# /etc/ansible/hosts
 	[webservers]
 	10.1.0.5 ansible_python_interpreter=/usr/bin/python3
 	10.1.0.6 ansible_python_interpreter=/usr/bin/python3
@@ -139,9 +140,11 @@ Update the hosts file in /etc/ansible to include webservers group
 	10.0.0.4 ansible_python_interpreter=/usr/bin/python3
 	```
 - if neccesary, update the remote_login line in ansible.cfg
+
 	- remote_user = sysadmin
 
 - tests if ansible is communicating with webservers
+
 	- ansible all -m ping
 
 - if neccesary, add the links to the ssh keys in your host file
