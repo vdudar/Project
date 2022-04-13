@@ -153,7 +153,7 @@ Once you are SSH into ansible's docker container you can follow the steps below:
 - Update the filebeat-config file to include...
 
 - setup.kibana:
-	- host: "<ELK VM PRIVATE IP>:5601"
+	host: "<ELK VM PRIVATE IP>:5601"
 	
 ```
 	# output.elasticsearch:
@@ -171,22 +171,25 @@ Once you are SSH into ansible's docker container you can follow the steps below:
 - update the metricbeat-config file to include...
 
 - Under Kibana
-	- setup.kibana:
-	- host: "10.0.0.4:5601"
+```
+	setup.kibana:
+	host: "10.0.0.4:5601"
+```
 
 - Under Elasticsearch Output
-
-	- output.elasticsearch:
-	- Array of hosts to connect to.
-	- hosts: ["10.0.0.4:9200"]
-	- username: "elastic"
-	- password: "changeme"
-
-	- Optional protocol and basic auth credentials.
-	- #protocol: "https"
-	- #username: "elastic"
-	- #password: "changeme"
-
+```
+	output.elasticsearch:
+	Array of hosts to connect to.
+	hosts: ["10.0.0.4:9200"]
+	username: "elastic"
+	password: "changeme"
+	
+	Optional protocol and basic auth credentials.
+	protocol: "https"
+	username: "elastic"
+	password: "changeme"
+```
+	
 - Run the desired playbook(s), and navigate to http://{ElkVM Public IP}:5601/app/kibana#/home to check that the installation worked as expected. Wait till you have verified Kibana is running before you update the login credentials, then update the config file.
 
 ![Kibana](https://user-images.githubusercontent.com/95455459/163077082-4a755839-4fc4-48ee-aa4e-e79aff9af6fb.JPG)
