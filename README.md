@@ -130,7 +130,7 @@ Once you are SSH into ansible's docker container you can follow the steps below:
 
 - Update the hosts file in /etc/ansible to include webservers group
 
-- 	''' #/etc/ansible/hosts
+-# 	/etc/ansible/hosts
 	[webservers]
 	10.0.0.5 ansible_python_interpreter=/usr/bin/python3
 	10.0.0.6 ansible_python_interpreter=/usr/bin/python3
