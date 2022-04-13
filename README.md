@@ -132,13 +132,15 @@ Once you are SSH into ansible's docker container you can follow the steps below:
 
 	# /etc/ansible/hosts
 	[webservers]
-	10.1.0.5 ansible_python_interpreter=/usr/bin/python3
-	10.1.0.6 ansible_python_interpreter=/usr/bin/python3
-	10.1.0.7 ansible_python_interpreter=/usr/bin/python3
+	10.0.0.4 ansible_python_interpreter=/usr/bin/python3
+	10.0.0.5 ansible_python_interpreter=/usr/bin/python3
+	10.0.0.6 ansible_python_interpreter=/usr/bin/python3
 
 	[elk]
-	10.0.0.4 ansible_python_interpreter=/usr/bin/python3
+	10.2.0.5 ansible_python_interpreter=/usr/bin/python3
 	```
+	
+	
 - if neccesary, update the remote_login line in ansible.cfg
 
 	- remote_user = sysadmin
